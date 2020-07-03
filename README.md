@@ -1,4 +1,4 @@
-# Awesome Project Build with TypeORM
+# Order Management Database
 
 Steps to run this project:
 
