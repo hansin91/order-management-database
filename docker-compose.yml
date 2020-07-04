@@ -13,3 +13,7 @@ services:
       MYSQL_DATABASE: OrderManagement
       MYSQL_USER: root
       MYSQL_PASSWORD: root
+    volumes:
+      - om-db:/var/lib/mysql
+volumes:
+  om-db:
