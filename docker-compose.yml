@@ -15,12 +15,28 @@ services:
       MYSQL_PASSWORD: root
     volumes:
       - om-db:/var/lib/mysql
+
   redis:
+    container_name: redis
     image: redis
+    hostname: redis
     ports:
       - 6379:6379
     volumes:
-       - ./config/redis.conf:/redis.conf
-    command: [ "redis-server", "/redis.conf" ]
+       - redis-data:/data
+    command: ["redis-server", "--requirepass", "abc1234"]
+
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    environment:
+      - REDIS_PORT=6379
+      - REDIS_HOST=redis
+      - REDIS_PASSWORD=abc1234
+    ports:
+      - 8081:8081
+
 volumes:
   om-db:
+  redis-data:
