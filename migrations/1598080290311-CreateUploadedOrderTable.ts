@@ -1,6 +1,6 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateUploadedOrdetTable1598080290311 implements MigrationInterface {
+export class CreateUploadedOrderTable1598080290311 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<any> {
       await queryRunner.createTable(new Table({
@@ -42,8 +42,8 @@ export class CreateUploadedOrdetTable1598080290311 implements MigrationInterface
             default: 'CURRENT_TIMESTAMP'
           },
           {
-            name: 'is_processing',
-            type: 'boolean',
+            name: 'status',
+            type: 'int',
             isNullable: false,
             default: 0
           },
@@ -54,7 +54,7 @@ export class CreateUploadedOrdetTable1598080290311 implements MigrationInterface
             default: 1
           },
         ]
-      }))
+      }), true)
     }
 
     public async down(queryRunner: QueryRunner): Promise<any> {

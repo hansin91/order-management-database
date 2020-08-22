@@ -1,6 +1,6 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class InsertUploadOrderMMenu1598024290179 implements MigrationInterface {
+export class InsertUploadOrderMenu1598024290179 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<any> {
         await queryRunner.query(`INSERT INTO OrderManagement.m_menu
