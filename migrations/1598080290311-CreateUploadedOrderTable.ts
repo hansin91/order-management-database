@@ -39,7 +39,6 @@ export class CreateUploadedOrderTable1598080290311 implements MigrationInterface
             name: 'finished_date',
             type :'datetime',
             isNullable: true,
-            default: 'CURRENT_TIMESTAMP'
           },
           {
             name: 'status',
