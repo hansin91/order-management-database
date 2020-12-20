@@ -46,6 +46,7 @@ export class CreateTableTPurchaseOrderDetail1608439319685 implements MigrationIn
             {
                 name: 'discount_type',
                 type: 'enum',
+                enum: ['percentage', 'fixed'],
                 isNullable: true
             },
             {
@@ -56,9 +57,9 @@ export class CreateTableTPurchaseOrderDetail1608439319685 implements MigrationIn
             {
                 name: 'subtotal',
                 type: 'decimal',
+                isNullable: false,
                 precision: 10,
                 scale: 2,
-                isNullable: false
             }
         ]
       }), true)
